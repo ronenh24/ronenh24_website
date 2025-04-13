@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% if results %}
+        <title>{{ request.GET.query_text }} Page {{ page_obj.number }}</title>
+    {% else %}
+        <title>Bible Search Engine</title>
+    {% endif %}
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'search/main_styles.css' %}">
+</head>
+<body>
+    <h1 id="introheader"><a href="{% url 'bible-search:main' %}">Welcome to the Bible Search Engine</a></h1>
+    <div id="searchbar">
+        <form method="GET" id="searchbox">
+            <input type="text" name="query_text" value="{{ request.GET.query_text }}" placeholder="Type to Search">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    {% if results %}
+        <div>
+            <ul id="resultslist">
+                {% for chapter in results %}
+                    <li id="result">
+                        <a href="{% url 'bible-search:chapter' chapter.id %}">{{ chapter.chapter_name }}</a>
+                        <p class="preview">{{ chapter.preview }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if is_paginated %}
+            <div id="pagenavigator">
+                {% if page_obj.has_previous %}
+                    <a href="?query_text={{ request.GET.query_text }}&page=1">First</a>
+                    <a href="?query_text={{ request.GET.query_text }}&page={{ page_obj.previous_page_number }}">Previous</a>
+                {% else %}
+                    <a href="?query_text={{ request.GET.query_text }}&page=1">First</a>
+                    <a href="?query_text={{ request.GET.query_text }}&page=1">Previous</a>
+                {% endif %}
+
+                <a>Page {{ page_obj.number }} of {{ paginator.num_pages }}</a>
+
+                {% if page_obj.has_next %}
+                    <a href="?query_text={{ request.GET.query_text }}&page={{ page_obj.next_page_number }}">Next</a>
+                    <a href="?query_text={{ request.GET.query_text }}&page={{ paginator.num_pages }}">Last</a>
+                {% else %}
+                    <a href="?query_text={{ request.GET.query_text }}&page={{ paginator.num_pages }}">Next</a>
+                    <a href="?query_text={{ request.GET.query_text }}&page={{ paginator.num_pages }}">Last</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

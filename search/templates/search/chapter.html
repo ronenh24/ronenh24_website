@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ chapter.chapter_name }}</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'search/chapter_styles.css' %}">
+</head>
+<body>
+    <h1 id="introheader"><a href="{% url 'bible-search:main' %}">Welcome to the Bible Search Engine</a></h1>
+    <h2 id="chapterheader">{{ chapter.chapter_name }}</h2>
+    <ol>
+        {% for verse in chapter.verse_set.all %}
+            <li>{{ verse.verse_text }}</li>
+        {% endfor %}
+    </ol>
+    <div id="pagenavigator">
+        {% if previous_chapter %}
+            <a href="{% url 'bible-search:chapter' previous_chapter.id %}">{{ previous_chapter.chapter_name }}</a>
+        {% else %}
+            {{ chapter.chapter_name }}
+        {% endif %}
+
+        {{ chapter.chapter_name }}
+
+        {% if next_chapter %}
+            <a href="{% url 'bible-search:chapter' next_chapter.id %}">{{ next_chapter.chapter_name }}</a>
+        {% else %}
+            {{ chapter.chapter_name }}
+        {% endif %}
+    </div>
+</body>
+</html>

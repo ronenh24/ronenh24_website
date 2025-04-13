@@ -1,0 +1,3 @@
+from bible_search_engine.pipeline import create_bible_search_engine
+
+bible_search_engine = create_bible_search_engine()

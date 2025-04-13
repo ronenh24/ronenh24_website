@@ -1,0 +1,5 @@
+bible_search_engine
+Django
+whitenoise
+psycopg2
+gunicorn

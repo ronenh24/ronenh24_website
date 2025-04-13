@@ -1,0 +1,40 @@
+#introheader {
+    font-family: Roboto;
+    justify-content: center;
+    display: flex;
+}
+
+#introheader a:link,
+#introheader a:visited,
+#introheader a:hover
+#introheader a:focus
+#introheader a:active {
+    color: Blue;
+    text-decoration: None;
+}
+
+#chapterheader {
+    font-family: Roboto;
+    justify-content: center;
+    display: flex;
+}
+
+#pagenavigator {
+    display: flex;
+    justify-content: center;
+    font-family: Times New Roman;
+    font-size: 16px;
+}
+
+#pagenavigator a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+li {
+    font-family: Times New Roman;
+    display: list-item;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

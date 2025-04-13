@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ronen Huang Personal Website</title>
+    {% load static %}
+    <link type="text/css" rel="stylesheet" href="{% static 'home/main_styles.css' %}">
+</head>
+<body>
+    <h1 id="introheader"><a href="{%url 'home:main' %}"">Ronen Huang Personal Website</a></h1>
+    <li><a href="{% url 'bible-search:main' %}">Bible Search Engine</a></li>
+</body>
+</html>

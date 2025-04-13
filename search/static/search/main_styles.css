@@ -1,0 +1,68 @@
+#introheader {
+    font-family: Roboto;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+#introheader a:link,
+#introheader a:visited,
+#introheader a:hover
+#introheader a:focus
+#introheader a:active {
+    color: Blue;
+    text-decoration: None;
+}
+
+#searchbar {
+    font-family: Roboto;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+}
+
+#searchbox {
+    justify-content: center;
+    display: flex;
+}
+
+input {
+    font-size: 24px;
+    width: 100%;
+}
+
+button {
+    font-size: 24px;
+}
+
+#resultslist {
+    list-style-type: None;
+    font-size: 20px;
+    font-family: Times New Roman;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+#result {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    text-align: center;
+}
+
+.preview {
+    margin-top: 0%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+#pagenavigator {
+    display: flex;
+    justify-content: center;
+    font-family: Times New Roman;
+    font-size: 16px;
+}
+
+#pagenavigator a {
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -2,7 +2,7 @@
 The link to the website is [https://ronenhuang24.azurewebsites.net](https://ronenhuang24.azurewebsites.net).
 
 ## Time Frame
-March 2025 - Present
+March 2025 to Present
 
 ## Bible Search Engine Website
 Code located at [search](search).
